@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-end p-2">
+    <div class="d-flex">
+        <input type="text" class="form-control mx-2" placeholder="Nombre" #searchInput>
+        <button class="btn btn-primary" (click)="search()">Buscar</button>
+    </div>
+</div>
+
+<div class="row" *ngIf="info && info.data">
+    <div class="col-6 col-md-4 col-lg-3 py-3" *ngFor="let item of info.data">
+        <a routerLink="detail/{{item.mal_id}}">
+            <div class="card" style="width: 15rem;">
+                <img [src]="item.images.jpg.image_url" alt="{{item.title}}" class="img-fluid card-img-top">
+                <div class="card-body">
+                    <p class="card-text title">{{item.title}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
