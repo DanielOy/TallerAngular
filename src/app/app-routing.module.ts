@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './modules/home/pages/home/home.component';
-import { SearchComponent } from './modules/search/pages/search/search.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: ()=> import('./modules/home/home.module').then(m=>m.HomeModule)
-  },
-  {
     path: 'search',
-    loadChildren: ()=> import('./modules/search/search.module').then(m=>m.SearchModule)
+    loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
+    title: 'Búsqueda'
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'search'
   }
 ];
 

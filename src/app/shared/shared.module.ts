@@ -11,7 +11,7 @@ import { BlackBackgroundDirective } from './directives/black-background.directiv
   imports: [
     CommonModule
   ],
-  exports: [
+  exports:[
     BlackBackgroundDirective
   ]
 })

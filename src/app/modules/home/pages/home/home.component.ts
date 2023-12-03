@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SearchService } from 'src/app/modules/search/search.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +6,5 @@ import { SearchService } from 'src/app/modules/search/search.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
-  constructor(){
-
-
-  }
+  protected team: string[] = ['juan','pepe', 'luis'];
 }

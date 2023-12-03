@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
   protected year: number;
+
   constructor(){
     this.year = (new Date()).getFullYear();
   }
-
 }

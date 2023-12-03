@@ -1,19 +1,23 @@
 <div *ngIf="anime">
     <div class="row">
-        <h2 class="h2">{{anime.title}}</h2>
+        <h2 class="h2"> {{anime.title}}</h2>
     </div>
     <hr class="hr">
     <div class="row">
         <div class="col-4">
-            <img [src]="anime.images.jpg.image_url" [alt]="anime.title" class="img-thumbnail">
+            <div class="d-flex flex-column" style="max-width: 35vh;">
+                <img [src]="anime.image" class="img-thumbnail">
+                <button class="btn"
+                    [ngClass]="{'btn-outline-success':!anime.is_favorite, 'btn-success': anime.is_favorite}"
+                    (click)="toggleFavorites()">{{anime.is_favorite ? 'Remover de': 'Agregar a'}} favoritos</button>
+            </div>
         </div>
-        <div class="col-8">
+        <div class="col-8 text-wrap">
             {{anime.synopsis}}
         </div>
     </div>
     <hr class="hr">
-    <div class="row" *ngIf="safeUrl">
-        <iframe [src]="safeUrl" frameborder="0" width="560" height="315"></iframe>
-        <!-- src="https://www.youtube.com/embed/ld-oqpvOBAk?enablejsapi=1&wmode=opaque&autoplay=1" -->
+    <div class="row" *ngIf="secureUrl">
+        <iframe width="560" height="315" [src]="secureUrl" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
